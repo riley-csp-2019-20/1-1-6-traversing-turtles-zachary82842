@@ -19,13 +19,15 @@ starty = 0
 
 #  Make a for loop
 for t in my_turtles:
+	t.penup()
 	t.goto(startx, starty)
-	t.right(45)     
+	t.pendown()
+	t.right(45)    
 	t.forward(50)
 
 #	Make the turtles move on its x and y axis
-	startx = startx + 50
-	starty = starty + 50
+	startx = t.xcor() 
+	starty = t.ycor()
 
 wn = trtl.Screen()
 wn.mainloop()
