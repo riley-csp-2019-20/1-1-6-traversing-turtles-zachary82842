@@ -8,9 +8,16 @@ my_turtles = []
 # use interesting shapes and colors
 turtle_shapes = ["arrow", "turtle", "circle", "square", "triangle", "classic"]
 turtle_colors = ["red", "blue", "green", "orange", "purple", "gold"]
+new_turtle = turtle_shapes.pop()
+
+
+
 
 for s in turtle_shapes:
   t = trtl.Turtle(shape=s)
+  new_color = turtle_colors.pop()
+  t.pencolor(new_color)
+  t.fillcolor(new_color)
   my_turtles.append(t)
 
 #  add the x and y coordinates
