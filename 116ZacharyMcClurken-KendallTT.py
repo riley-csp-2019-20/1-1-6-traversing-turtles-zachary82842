@@ -6,18 +6,17 @@ import turtle as trtl
 my_turtles = []
 
 # use interesting shapes and colors
-turtle_shapes = ["arrow", "turtle", "circle", "square", "triangle", "classic"]
-turtle_colors = ["red", "blue", "green", "orange", "purple", "gold"]
-new_turtle = turtle_shapes.pop()
+turtle_shapes = ["arrow", "turtle", "circle", "square", "triangle", "classic", "arrow"]
+turtle_colors = ["red", "blue", "green", "orange", "purple", "gold", "black"]
 
 
 
 
 for s in turtle_shapes:
   t = trtl.Turtle(shape=s)
+  t.pensize(5)
   new_color = turtle_colors.pop()
-  t.pencolor(new_color)
-  t.fillcolor(new_color)
+  t.color(new_color)
   my_turtles.append(t)
 
 #  add the x and y coordinates
@@ -25,12 +24,14 @@ startx = 0
 starty = 0
 
 #  Make a for loop
+count = 0
 for t in my_turtles:
 	t.penup()
 	t.goto(startx, starty)
 	t.pendown()
-	t.right(45)    
-	t.forward(50)
+	t.right(51 * count)    
+	t.forward(75)
+	count += 1
 
 #	Make the turtles move on its x and y axis
 	startx = t.xcor() 
